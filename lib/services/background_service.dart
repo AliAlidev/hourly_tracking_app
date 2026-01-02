@@ -78,8 +78,8 @@ Future<void> _performLocationTracking() async {
   }
 
   // Check internet connectivity
-  final connectivityResult = await Connectivity().checkConnectivity();
-  if (connectivityResult == ConnectivityResult.none) {
+  final connectivityResults = await Connectivity().checkConnectivity();
+  if (connectivityResults.isEmpty || connectivityResults.contains(ConnectivityResult.none)) {
     // No internet connection, skip
     return;
   }
