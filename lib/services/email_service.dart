@@ -17,9 +17,9 @@ class EmailService {
   
   /// EmailJS Configuration (Option 1 - Recommended for testing)
   /// Sign up at https://www.emailjs.com/
-  static const String _emailJSServiceId = 'YOUR_SERVICE_ID';
-  static const String _emailJSTemplateId = 'YOUR_TEMPLATE_ID';
-  static const String _emailJSPublicKey = 'YOUR_PUBLIC_KEY';
+  static const String _emailJSServiceId = 'service_mv5ay38';
+  static const String _emailJSTemplateId = 'template_361khf7';
+  static const String _emailJSPublicKey = 'WbGVZYJxmpIDnJO03';
   static const bool _useEmailJS = false; // Set to true to use EmailJS
   
   /// Custom API Configuration (Option 2)
