@@ -1,0 +1,47 @@
+name: hourly_location_tracker
+description: A Flutter app that tracks location in background and sends updates via email
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Location tracking
+  geolocator: ^11.0.0
+  permission_handler: ^11.3.1
+  
+  # Background execution
+  workmanager: ^0.5.2
+  
+  # Network connectivity
+  connectivity_plus: ^6.0.5
+  
+  # HTTP requests for email
+  http: ^1.2.2
+  
+  # Storage
+  flutter_secure_storage: ^9.2.2
+  shared_preferences: ^2.3.2
+  
+  # Gallery UI
+  photo_view: ^0.14.1
+  
+  # Device info
+  device_info_plus: ^10.1.2
+  battery_plus: ^6.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/images/
+
