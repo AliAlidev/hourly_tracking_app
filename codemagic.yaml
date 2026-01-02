@@ -1,0 +1,47 @@
+workflows:
+  android-workflow:
+    name: Android Workflow
+    max_build_duration: 60
+    instance_type: mac_mini_m1
+    environment:
+      flutter: stable
+      groups:
+        # Add your environment variables here if needed
+        # - keystore_credentials
+      vars:
+        # Add any environment variables here
+        # CM_KEYSTORE_PASSWORD: Encrypted(...)
+        # CM_KEY_ALIAS: Encrypted(...)
+        # CM_KEY_PASSWORD: Encrypted(...)
+    scripts:
+      - name: Get Flutter version
+        script: |
+          flutter --version
+      - name: Install dependencies
+        script: |
+          flutter pub get
+      - name: Run Flutter analyzer
+        script: |
+          flutter analyze
+      - name: Build Android APK
+        script: |
+          flutter build apk --release
+      - name: Build Android App Bundle (AAB)
+        script: |
+          flutter build appbundle --release
+    artifacts:
+      - build/app/outputs/flutter-apk/*.apk
+      - build/app/outputs/bundle/release/*.aab
+    publishing:
+      email:
+        recipients:
+          - # Add your email here for build notifications
+        notify:
+          success: true
+          failure: true
+      # Uncomment and configure if you want to publish to Google Play
+      # google_play:
+      #   credentials: Encrypted(...)
+      #   track: alpha
+      #   submit_as_draft: false
+
